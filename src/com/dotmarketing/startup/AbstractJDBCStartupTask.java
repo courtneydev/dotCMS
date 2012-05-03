@@ -231,7 +231,8 @@ public abstract class AbstractJDBCStartupTask implements StartupTask {
 				idxfor: for (Index index:indexes) {
 					try {
 						for (PrimaryKey pk:primaryKeys) {
-							if(index.tableName.equalsIgnoreCase(pk.tableName) && index.indexName.equalsIgnoreCase(pk.keyName)) {
+							if(index.tableName!=null && pk.tableName!=null && index.indexName!=null && pk.keyName!=null &&
+							        index.tableName.equalsIgnoreCase(pk.tableName) && index.indexName.equalsIgnoreCase(pk.keyName)) {
 								continue idxfor; 
 							}
 						}
