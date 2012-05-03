@@ -515,8 +515,8 @@ public abstract class AbstractJDBCStartupTask implements StartupTask {
 						key.columnNames.add(rs.getString("COLUMN_NAME"));
 						
 					}
-					ret.add(key);
-
+					if(key!=null)
+					    ret.add(key);
 			}
 			
 			if(drop) {
